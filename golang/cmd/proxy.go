@@ -4,7 +4,7 @@ import (
 	"errors"
 	"log"
 
-	"github.com/Frizz925/gbf-proxy/golang/proxy"
+	"gbf-proxy/golang/proxy"
 	"github.com/spf13/cobra"
 )
 

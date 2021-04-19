@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Frizz925/gbf-proxy/golang/lib"
+	"gbf-proxy/golang/lib"
 )
 
 type ServerConfig struct {

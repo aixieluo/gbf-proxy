@@ -3,7 +3,7 @@ package cmd
 import (
 	"errors"
 
-	"github.com/Frizz925/gbf-proxy/golang/cache"
+	"gbf-proxy/golang/cache"
 
 	"github.com/spf13/cobra"
 )

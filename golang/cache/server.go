@@ -14,8 +14,8 @@ import (
 
 	"github.com/patrickmn/go-cache"
 
-	"github.com/Frizz925/gbf-proxy/golang/lib"
-	httpHelpers "github.com/Frizz925/gbf-proxy/golang/lib/helpers/http"
+	"gbf-proxy/golang/lib"
+	httpHelpers "gbf-proxy/golang/lib/helpers/http"
 	"github.com/go-redis/redis"
 	"github.com/vmihailenco/msgpack"
 )

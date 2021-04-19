@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Frizz925/gbf-proxy/golang/lib"
+	"gbf-proxy/golang/lib"
 	"github.com/PuerkitoBio/goquery"
 )
 

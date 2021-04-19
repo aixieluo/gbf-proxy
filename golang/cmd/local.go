@@ -7,10 +7,10 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/Frizz925/gbf-proxy/golang/controller"
+	"gbf-proxy/golang/controller"
 
-	"github.com/Frizz925/gbf-proxy/golang/cache"
-	"github.com/Frizz925/gbf-proxy/golang/proxy"
+	"gbf-proxy/golang/cache"
+	"gbf-proxy/golang/proxy"
 	"github.com/spf13/cobra"
 )
 

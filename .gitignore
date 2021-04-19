@@ -42,6 +42,9 @@ override.tf.json
 .vscode
 *.code-workspace
 
+# goland
+.idea
+
 # Unix socket stuff
 *.sock
 

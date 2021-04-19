@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Frizz925/gbf-proxy/golang/cache"
-	"github.com/Frizz925/gbf-proxy/golang/lib"
-	httpHelpers "github.com/Frizz925/gbf-proxy/golang/lib/helpers/http"
+	"gbf-proxy/golang/cache"
+	"gbf-proxy/golang/lib"
+	httpHelpers "gbf-proxy/golang/lib/helpers/http"
 	"github.com/jinzhu/copier"
 )
 
@@ -126,6 +126,17 @@ func (s *Server) ServeHTTPUnsafe(w http.ResponseWriter, req *http.Request) {
 		} else {
 			httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
 		}
+	} else if strings.HasSuffix(hostname, "cdn-connect.mobage.jp") {
+		if s.CacheAvailable() {
+			c = s.cache
+			httpHelpers.LogRequest(s.base.Name, req, "Cache access")
+		}
+	} else if strings.HasSuffix(hostname, ".mobage.jp") {
+		httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
+	} else if strings.HasSuffix(hostname, "203.104.248.14") {
+		httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
+	} else if strings.HasSuffix(hostname, "baidu.com") {
+		httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
 	} else {
 		httpHelpers.LogRequest(s.base.Name, req, "Forbidden host")
 		httpHelpers.WriteError(w, 403, "Host not allowed")

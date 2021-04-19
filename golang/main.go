@@ -1,6 +1,6 @@
 package main
 
-import "github.com/Frizz925/gbf-proxy/golang/cmd"
+import "gbf-proxy/golang/cmd"
 
 var version = "latest"
 
