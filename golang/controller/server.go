@@ -126,13 +126,13 @@ func (s *Server) ServeHTTPUnsafe(w http.ResponseWriter, req *http.Request) {
 		} else {
 			httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
 		}
-	} else if strings.HasSuffix(hostname, "cdn-connect.mobage.jp") {
-		if s.CacheAvailable() {
+	} else if strings.HasSuffix(hostname, ".mobage.jp") {
+		if s.CacheAvailable() && strings.HasPrefix(hostname, "cdn-connect") {
 			c = s.cache
 			httpHelpers.LogRequest(s.base.Name, req, "Cache access")
+		} else {
+			httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
 		}
-	} else if strings.HasSuffix(hostname, ".mobage.jp") {
-		httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
 	} else if strings.HasSuffix(hostname, "203.104.248.14") {
 		httpHelpers.LogRequest(s.base.Name, req, "Proxy access")
 	} else if strings.HasSuffix(hostname, "baidu.com") {
